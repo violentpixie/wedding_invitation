@@ -1,93 +1,108 @@
-/* Body and background */
+/* General Body Settings */
 body {
+  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background: url('invitation_main_page.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
+  background: #fff;
+  color: #004d00;  /* Dark green font color */
   text-align: center;
+  position: relative;
 }
 
-/* Centered container */
+/* Container for all content */
 .container {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  z-index: 1;
+  margin-top: 50px; /* Adjust top margin as needed */
 }
 
-/* Wedding names style */
-.wedding-names {
-  font-family: 'CursiveFont', sans-serif; /* Set a specific font for the names */
-  font-size: 3rem;
+/* Styling for wedding names */
+.wedding-names p {
+  font-size: 2.5em;
   font-weight: bold;
-  color: gold;
-  animation: slideIn 3s ease-out;
-  margin: 20px 0;
+  color: #004d00;  /* Dark green color */
+  text-transform: uppercase;
+  animation: fadeIn 3s ease-out;
 }
 
-/* Smooth text fade-in animation */
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
+/* Animation for fading in wedding names */
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  100% {
-    transform: translateX(0);
+  to {
     opacity: 1;
   }
 }
 
-/* Spinning ornament animation */
-.spinning-element {
+/* Ornament Left (half visible on the left side) */
+.ornament-left {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: spin 5s infinite linear;
-  width: 150px;
-  height: 150px;
-  background-image: url('ornament.png');
-  background-size: contain;
+  left: 0;
+  top: 20%;
+  width: 50%;
+  height: 100px; /* Adjust the height of the ornament */
+  background-image: url('ornament_image.png'); /* Replace with your ornament image path */
   background-repeat: no-repeat;
+  background-position: left center;
+  background-size: cover;
+  z-index: -1;
+  transform: rotate(360deg);
+  animation: rotateOrnament 10s infinite linear;
 }
 
-/* Spin animation for the ornament */
-@keyframes spin {
+/* Ornament Right (half visible on the right side) */
+.ornament-right {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  width: 50%;
+  height: 100px; /* Adjust the height of the ornament */
+  background-image: url('ornament_image.png'); /* Replace with your ornament image path */
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  z-index: -1;
+  transform: rotate(360deg);
+  animation: rotateOrnament 10s infinite linear;
+}
+
+/* Rotate ornament images continuously */
+@keyframes rotateOrnament {
   0% {
-    transform: rotate(0deg) translate(-50%, -50%);
+    transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg) translate(-50%, -50%);
+    transform: rotate(360deg);
   }
 }
 
-/* Form section for names and attendance */
+/* Form Styling */
 form {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 input[type="text"] {
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-  font-size: 1.2rem;
+  padding: 8px;
+  margin: 10px;
+  width: 200px;
 }
 
+input[type="radio"] {
+  margin: 5px;
+}
+
+/* Submit Button */
 input[type="submit"] {
   padding: 10px 20px;
-  margin-top: 10px;
-  background-color: gold;
+  background-color: #004d00;
+  color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.2em;
+  margin-top: 10px;
 }
 
 input[type="submit"]:hover {
-  background-color: #f2c300;
+  background-color: #006400;
 }
