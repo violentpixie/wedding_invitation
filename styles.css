@@ -1,8 +1,13 @@
 /* General Body Settings */
+@font-face {
+  font-family: 'WeddingFont';
+  src: url('kzbalmoral_regular.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'WeddingFont';
   background: url('invitation_main_page.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
@@ -17,14 +22,11 @@ body {
   margin-top: 50px; /* Adjust top margin as needed */
 }
 
-@font-face {
-  font-family: 'WeddingFont';
-  src: url('kzbalmoral_regular.ttf') format('truetype');
-}
+
 
 /* Apply the custom font */
 .wedding-names p {
-  font-family: 'WeddingFont', sans-serif;
+  font-family: 'WeddingFont';
   font-size: 2.5em;
   font-weight: bold;
   color: #004d00;  /* Dark green color */
@@ -43,36 +45,35 @@ body {
   }
 }
 
-/* Ornament Left (half visible on the left side) */
 .ornament-left {
   position: absolute;
-  left: -25%; /* Adjusted to show only half the ornament */
   top: 20%;
-  width: 50%;
-  height: 100px; /* Adjust the height of the ornament */
-  background-image: url('ornament.png'); /* Replace with your ornament image path */
+  left: -620px; /* Half of 1240px */
+  width: 1240px;
+  height: 1748px;
+  background-image: url('ornament.png');
   background-repeat: no-repeat;
-  background-position: left center;
-  background-size: cover;
+  background-position: center center;
+  background-size: contain;
+  transform-origin: center center;
+  animation: spinOrnament 40s linear infinite;
   z-index: -1;
-  transform: rotate(360deg);
-  animation: rotateOrnament 10s infinite linear;
 }
 
-/* Ornament Right (half visible on the right side) */
+/* Right Ornament */
 .ornament-right {
   position: absolute;
-  right: -25%; /* Adjusted to show only half the ornament */
   top: 20%;
-  width: 50%;
-  height: 100px; /* Adjust the height of the ornament */
-  background-image: url('ornament.png'); /* Replace with your ornament image path */
+  right: -620px; /* Half of 1240px */
+  width: 1240px;
+  height: 1748px;
+  background-image: url('ornament.png');
   background-repeat: no-repeat;
-  background-position: right center;
-  background-size: cover;
+  background-position: center center;
+  background-size: contain;
+  transform-origin: center center;
+  animation: spinOrnament 40s linear infinite;
   z-index: -1;
-  transform: rotate(360deg);
-  animation: rotateOrnament 10s infinite linear;
 }
 
 /* Rotate ornament images continuously */
