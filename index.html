@@ -1,49 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Invitation</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <!-- Importing Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <style>
+    /* Background image */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('invitation_main_page.jpg'); /* Path to background image */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif; /* Default font */
+      color: #333;
+    }
+
+    /* Container for all content */
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    /* Golden spinning ornament */
+    .ornament {
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: spin 10s infinite linear;
+    }
+
+    /* Spinning animation */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Name rolling from left with fancy font */
+    .name {
+      font-family: 'Great Vibes', cursive; /* Fancy font for the names */
+      font-size: 4rem;
+      opacity: 0;
+      animation: rollIn 3s ease-out forwards, fadeIn 2s ease-in forwards;
+      transform: translateX(-100%);
+    }
+
+    /* Animation for rolling text */
+    @keyframes rollIn {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(0); }
+    }
+
+    /* Text fading in */
+    .fadeIn {
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      animation-delay: 4s;
+    }
+
+    /* Fade-in effect */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Rest of the text with a simpler font */
+    .info {
+      font-family: 'Poppins', sans-serif; /* Simple font for the rest */
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+
+    .rsvp-button {
+      padding: 12px 30px;
+      background-color: #f49ac3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1.2rem;
+    }
+
+    .rsvp-button:hover {
+      background-color: #f27a9b;
+    }
+
+  </style>
 </head>
 <body>
-    <header>
-        <h1 class="animated-text">You're Invited to Our Wedding!</h1>
-        <p class="animated-text">Join us for a celebration of love.</p>
-    </header>
 
-    <section id="details" class="animated-section">
-        <h2>Details:</h2>
-        <p>Date: June 30, 2025</p>
-        <p>Location: Our Venue, City</p>
-    </section>
+  <!-- Wedding invitation container -->
+  <div class="container">
+    <!-- Golden ornament image -->
+    <img class="ornament" src="ornament.png" alt="Ornament">
 
-    <section id="RSVP">
-        <h2 class="animated-text">RSVP</h2>
-        <form id="rsvpForm">
-            <label for="name">Your Name:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="attending">Will you be attending?</label>
-            <select id="attending" name="attending" required>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            
-            <label for="plusOne">Are you bringing a plus one?</label>
-            <select id="plusOne" name="plusOne">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-            </select>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+    <!-- Animated names with custom font -->
+    <div class="name">
+      <h1>Алмас & Мархаба</h1>
+    </div>
 
-    <audio autoplay loop>
-        <source src="music.mp3" type="audio/mp3">
-    </audio>
+    <!-- Additional invitation text with fade-in animation -->
+    <div class="info fadeIn">
+      <p>Сіздерді Ұлым Алмас пен келінім Мархабаның үйлену тойына арналған салтанатты дастарханымыздың құрметті қонағы болуға шақырамыз!</p>
+      <p>Той иесі: Нұржан Ханым</p>
+      <p>Жексенбі, 27 Шілде 2025, 18:00</p>
+      <p>Семей қаласы, Севастопольская көшесі 20/1 "Кен Сарай" мейрамханасы</p>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- RSVP Button -->
+    <button class="rsvp-button">RSVP</button>
+  </div>
+
+  <!-- Audio Player (auto-play and loop the wedding music) -->
+  <audio autoplay loop>
+    <source src="toy_zhyry.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
 </body>
 </html>
