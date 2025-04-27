@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RSVP - Wedding Invitation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Wedding RSVP Form -->
+  <h1 class="fade-in">RSVP - Алмас & Мархаба</h1>
+
+  <div class="content">
+    <p>Scroll down to RSVP</p> <!-- Example Content for Scrolling -->
+  </div>
+
+  <!-- RSVP Form -->
+  <div class="form-content" id="rsvp-form">
+    <form id="rsvp-form-element">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="attending">Are you attending?</label><br>
+      <input type="radio" id="yes" name="attending" value="Yes" required> Yes
+      <input type="radio" id="no" name="attending" value="No"> No<br><br>
+
+      <label for="guest">Will you be bringing a guest?</label><br>
+      <input type="radio" id="guest-yes" name="guest" value="Yes"> Yes
+      <input type="radio" id="guest-no" name="guest" value="No" required> No<br><br>
+
+      <input type="submit" value="Submit RSVP">
+    </form>
+  </div>
+
+  <p class="fade-in">
+    <a href="index.html" style="text-decoration: none; color: #1f4d2f; font-weight: bold; font-size: 1.2rem;">Back to Invitation</a>
+  </p>
+
+  <script>
+    // Show the form when the user scrolls to the bottom of the page
+    window.addEventListener("scroll", function() {
+      const form = document.getElementById("rsvp-form");
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        form.style.display = "block"; // Show the form when scrolled to the bottom
+      }
+    });
+
+    // Handle form submission without PHP (just an alert for demo purposes)
+    const formElement = document.getElementById("rsvp-form-element");
+    formElement.addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Your RSVP has been submitted!");
+      formElement.reset();
+    });
+  </script>
+
+</body>
+</html>
