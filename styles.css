@@ -45,17 +45,22 @@ body {
   }
 }
 
+@keyframes spinOrnament {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+/* Left Ornament */
 .ornament-left {
   position: absolute;
   top: 20%;
-  left: -620px; /* Half of 1240px */
-  width: 1240px;
-  height: 1748px;
+  left: 0;
+  width: 200%;
+  height: auto;
   background-image: url('ornament.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: left center;
   background-size: contain;
-  transform-origin: center center;
   animation: spinOrnament 40s linear infinite;
   z-index: -1;
 }
@@ -64,27 +69,26 @@ body {
 .ornament-right {
   position: absolute;
   top: 20%;
-  right: -620px; /* Half of 1240px */
-  width: 1240px;
-  height: 1748px;
+  right: 0;
+  width: 200%;
+  height: auto;
   background-image: url('ornament.png');
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: right center;
   background-size: contain;
-  transform-origin: center center;
   animation: spinOrnament 40s linear infinite;
+  transform: translateX(50%);
   z-index: -1;
 }
 
-/* Rotate ornament images continuously */
-@keyframes rotateOrnament {
-  0% {
-    transform: rotate(0deg);
+/* Make it better on smaller screens */
+@media (max-width: 768px) {
+  .ornament-left, .ornament-right {
+    width: 300%;
+    top: 15%;
+    animation-duration: 60s; /* slower on phones */
   }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 
 /* Form Styling */
 form {
@@ -129,18 +133,5 @@ input[type="submit"]:hover {
   background-color: #006400;
 }
 
-/* Mobile Adjustments */
-@media (max-width: 600px) {
-  .wedding-names p {
-    font-size: 2em;
-  }
 
-  .ornament-left, .ornament-right {
-    width: 60%;
-    top: 15%;
-  }
-
-  form {
-    padding: 15px;
-  }
 }
