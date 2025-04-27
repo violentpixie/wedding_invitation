@@ -4,124 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Invitation</title>
-  <!-- Importing Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function submitForm(event) {
+      event.preventDefault();  // Prevent form submission
+      
+      const name = document.querySelector('input[name="name"]').value;
+      const surname = document.querySelector('input[name="surname"]').value;
+      const attending = document.querySelector('input[name="attending"]:checked').value;
+      const withSomeone = document.querySelector('input[name="with_someone"]:checked').value;
 
-  <style>
-    /* Background image */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      background-image: url('invitation_main_page.jpg'); /* Path to background image */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Poppins', sans-serif; /* Default font */
-      color: #333;
+      // You can replace this part to send data to Google Sheets, or a server
+      console.log(`Name: ${name} ${surname}`);
+      console.log(`Attending: ${attending}`);
+      console.log(`With Someone: ${withSomeone}`);
+
+      // Example of displaying an alert after form submission
+      alert('Thank you for submitting your details!');
+      
+      // Optionally reset the form
+      event.target.reset();
     }
-
-    /* Container for all content */
-    .container {
-      position: relative;
-      text-align: center;
-      color: white;
-    }
-
-    /* Golden spinning ornament */
-    .ornament {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: spin 10s infinite linear;
-    }
-
-    /* Spinning animation */
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Name rolling from left with fancy font */
-    .name {
-      font-family: 'Great Vibes', cursive; /* Fancy font for the names */
-      font-size: 4rem;
-      opacity: 0;
-      animation: rollIn 3s ease-out forwards, fadeIn 2s ease-in forwards;
-      transform: translateX(-100%);
-    }
-
-    /* Animation for rolling text */
-    @keyframes rollIn {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(0); }
-    }
-
-    /* Text fading in */
-    .fadeIn {
-      opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
-      animation-delay: 4s;
-    }
-
-    /* Fade-in effect */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* Rest of the text with a simpler font */
-    .info {
-      font-family: 'Poppins', sans-serif; /* Simple font for the rest */
-      font-size: 1.5rem;
-      margin-top: 30px;
-    }
-
-    .rsvp-button {
-      padding: 12px 30px;
-      background-color: #f49ac3;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 20px;
-      font-size: 1.2rem;
-    }
-
-    .rsvp-button:hover {
-      background-color: #f27a9b;
-    }
-
-  </style>
+  </script>
 </head>
 <body>
 
-  <!-- Wedding invitation container -->
   <div class="container">
-    <!-- Golden ornament image -->
-    <img class="ornament" src="ornament.png" alt="Ornament">
-
-    <!-- Animated names with custom font -->
-    <div class="name">
-      <h1>Алмас & Мархаба</h1>
+    <!-- Wedding names -->
+    <div class="wedding-names">
+      <p>Алмас & Мархаба</p>
     </div>
 
-    <!-- Additional invitation text with fade-in animation -->
-    <div class="info fadeIn">
-      <p>Сіздерді Ұлым Алмас пен келінім Мархабаның үйлену тойына арналған салтанатты дастарханымыздың құрметті қонағы болуға шақырамыз!</p>
-      <p>Той иесі: Нұржан Ханым</p>
-      <p>Жексенбі, 27 Шілде 2025, 18:00</p>
-      <p>Семей қаласы, Севастопольская көшесі 20/1 "Кен Сарай" мейрамханасы</p>
-    </div>
+    <!-- Spinning ornament -->
+    <div class="spinning-element"></div>
 
-    <!-- RSVP Button -->
-    <button class="rsvp-button">RSVP</button>
+    <!-- Form for collecting guest info -->
+    <form onsubmit="submitForm(event)">
+      <input type="text" name="name" placeholder="Your Name" required><br>
+      <input type="text" name="surname" placeholder="Your Surname" required><br>
+      <label for="attending">Are you coming?</label><br>
+      <input type="radio" id="yes" name="attending" value="Yes" required>
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="attending" value="No">
+      <label for="no">No</label><br><br>
+
+      <label for="with_someone">Are you bringing someone?</label><br>
+      <input type="radio" id="with_someone_yes" name="with_someone" value="Yes">
+      <label for="with_someone_yes">Yes</label>
+      <input type="radio" id="with_someone_no" name="with_someone" value="No" checked>
+      <label for="with_someone_no">No</label><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
   </div>
 
-  <!-- Audio Player (auto-play and loop the wedding music) -->
+  <!-- Background music (MP3) -->
   <audio autoplay loop>
     <source src="toy_zhyry.mp3" type="audio/mp3">
     Your browser does not support the audio element.
