@@ -54,8 +54,8 @@ body {
 .ornament-left {
   position: absolute;
   top: 20%;
-  left: 0;
-  width: 200%;
+  left: -50%;
+  width: 100%;
   height: auto;
   background-image: url('ornament.png');
   background-repeat: no-repeat;
@@ -69,15 +69,15 @@ body {
 .ornament-right {
   position: absolute;
   top: 20%;
-  right: 0;
-  width: 200%;
+  right: -50%;
+  width: 100%;
   height: auto;
   background-image: url('ornament.png');
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
   animation: spinOrnament 40s linear infinite;
-  transform: translateX(50%);
+/*   transform: translateX(50%); */
   z-index: -1;
 }
 
