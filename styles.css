@@ -23,16 +23,34 @@ body {
 }
 
 
-
-/* Apply the custom font */
-.wedding-names p {
-  font-family: 'WeddingFont';
+.intro-text p {
+  font-family: 'Montserrat';
   font-size: 2.5em;
   font-weight: bold;
-  color: #004d00;  /* Dark green color */
+  color: #3F3B25;  /* Light brown color */
   text-transform: uppercase;
   animation: fadeIn 3s ease-out;
 }
+/* Apply the custom font */
+.wedding-names p {
+  font-family: 'WeddingFont';
+  font-size: 5.5em;
+  font-weight: bold;
+  color: #004d00;  /* Dark green color */
+/*   text-transform: uppercase; */
+  animation: fadeIn 3s ease-out;
+}
+
+.main-text p {
+  font-family: 'Montserrat';
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #3F3B25;  /* Light brown color */
+  text-transform: uppercase;
+  animation: fadeIn 3s ease-out;
+}
+
+
 
 
 /* Animation for fading in wedding names */
