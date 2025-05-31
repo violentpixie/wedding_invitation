@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anuar & Sabina</title>
+  <title>Алмас & Мархаба</title>
   <style>
+    @font-face {
+      font-family: 'AlmasFont';
+      src: url('kzbalmoral_regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Helvetica Neue', sans-serif; line-height: 1.6; background: #fff; color: #333; }
     header {
-      background: url('your-photo.jpg') no-repeat center center/cover;
+      background: url('invitation_main_page.jpg') no-repeat center center/cover;
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -16,9 +23,23 @@
       flex-direction: column;
       color: white;
       text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 0 20px;
     }
-    header h1 { font-size: 3rem; margin-bottom: 1rem; }
-    header p { font-size: 1.5rem; }
+    .invitation-header h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      font-family: 'Georgia', serif;
+    }
+    .invitation-header h1 {
+      font-size: 3.5rem;
+      font-family: 'AlmasFont', serif;
+      margin-bottom: 1rem;
+    }
+    .invitation-header p {
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
     nav {
       position: fixed;
       top: 0;
@@ -60,8 +81,15 @@
   </nav>
 
   <header>
-    <h1>Anuar & Sabina</h1>
-    <p>A Journey Together</p>
+    <div class="invitation-header">
+      <h2>Тойға шақыру</h2>
+      <h1>Алмас & Мархаба</h1>
+      <p>Сіздерді ұлым Алмас пен</p>
+      <p>келінім Мархабаның үйлену</p>
+      <p>тойына арналған салтанатты</p>
+      <p>дастарханымыздың құрметті</p>
+      <p>қонағы болуға шақырамыз!</p>
+    </div>
   </header>
 
   <section id="about">
@@ -85,7 +113,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Anuar & Sabina</p>
+    <p>&copy; 2025 Алмас & Мархаба</p>
   </footer>
 </body>
 </html>
